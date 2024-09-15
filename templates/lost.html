@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block main %}
+    <div class="form" style="text-align: left; padding-right: 20rem; background-color: white;">
+        <form action="/lost" method="POST" style="text-align: left; background-color: white;">
+            <div> <button type="submit" name="back"> Go Back </button> </div>
+        </form>
+    </div>
+    <div style="text-align: center;">
+        <img src="static/complete.png">
+    </div>
+    <div class="container" style="font-size: xx-large;">
+        You Lost!
+    </div>
+    <div class="container" style="font-size: xx-large;">
+        The Correct Answer Is {{ result }}
+    </div>
+{% endblock %}

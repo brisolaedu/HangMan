@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block main %}
+    <div style="text-align: center;">
+        <img src="static/{{name}}.png">
+        <div class="container" style="font-size: 12px;">
+            {% if start == 1 %}
+                Answers: 
+            {% endif %}
+            {% for char in words_try %}
+                {{ words_try.index(char) + 1 }}. "{{ char }}"     
+            {% endfor %}
+        </div>
+        <div class="container" style="font-size: xx-large;"> {% if start == 1 %} Display: {% endif %} {{display}} </div>
+    </div>
+    <form action="/" method="POST">
+        <input type="text" name="input" maxlength="1" class="input-box">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
